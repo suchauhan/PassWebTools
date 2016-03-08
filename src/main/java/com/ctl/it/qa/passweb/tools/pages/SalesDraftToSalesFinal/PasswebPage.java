@@ -182,4 +182,18 @@ public abstract class PasswebPage extends Page {
 	  return false;
 	}
 	}
+	
+	public boolean waitForElementPresent(WebElement webe)      
+	{
+	try
+	{
+	   WebDriverWait wait = new WebDriverWait(getDriver(), 5);
+	   wait.until(ExpectedConditions.visibilityOf(webe));
+	   return true;
+	}
+	catch (Exception e)
+	{
+	  return false;
+	}
+	}
 }

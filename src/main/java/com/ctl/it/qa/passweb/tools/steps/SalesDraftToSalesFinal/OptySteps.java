@@ -45,6 +45,7 @@ public class OptySteps extends SfaSteps {
 	UserSteps userSteps;
 
 	public void initiates_new_opportunity() {
+		waitABit(2000);
 		if (!opportunitiesPage.isExist(opportunitiesPage)) {
 			userSteps.opens_page("Opportunities");
 		}
@@ -85,8 +86,6 @@ public class OptySteps extends SfaSteps {
 		liteQuoteEditPage.shouldExist(liteQuoteEditPage);
 		fillMandatoryFields(liteQuoteEditPage);
 		waitABit(2000);
-		fillAllFields(liteQuoteEditPage);
-		//liteQuoteEditPage.btn_save_changes.click();
 		getDriver().findElement(By.cssSelector("input[value = 'Save Changes']")).click();
 		manageProductsPage.shouldExist(manageProductsPage);
 		manageProductsPage.btn_return_to_opportunity.click();

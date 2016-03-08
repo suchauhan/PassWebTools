@@ -103,7 +103,7 @@ public class UpdateKeyFieldsPage extends PasswebPage {
                             getTextbox(labelSubstring).clear();
                             typeInTextBox(getTextbox(labelSubstring), this, labelSubstring,product);
                             getTextbox(labelSubstring).sendKeys(Keys.ENTER);
-                            waitABit(2000);
+                            waitABit(3000);
                             getTextbox(labelSubstring).sendKeys(Keys.TAB);
                             //selectDropDownValue(listValue);
                             

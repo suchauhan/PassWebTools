@@ -6373,24 +6373,24 @@
 				<field name="ddl_isThisPartOfARfp" value="No" type="mandatory"></field>
 			</container>
 	    <container name="NSPEditPage">
-		  <field name="ddl_request_type" value="wait-2:New Contract" type="mandatory"/>
-		  <field name="ddl_request_contract_term" value="wait-2:24" type="mandatory"/>
-		  <field name="ddl_entities_providing_service" value="wait-2:QCC" type="mandatory"/>
-		  <field name="tbx_monthly_commit" value="wait-2:100" type="mandatory"/>
-		  <field name="ddl_commit_type" value="wait-2:New" type="mandatory"></field>
-		  <field name="ddl_revenue_type" value="wait-2:Retention" type="mandatory" ></field>
-		  <field name="tbx_anticipated_monthly_revenue" value="wait-2:15000" type="mandatory"></field>
-	 	  <field name="ddl_partner_related" value="wait-2:No" type="mandatory" ></field>
-		  <field name="ddl_centurylink_network_design" value="wait-2:No" type="mandatory"></field>
+		  <field name="ddl_request_type" value="wait-3:New Contract" type="mandatory"/>
+		  <field name="ddl_request_contract_term" value="wait-4:24" type="mandatory"/>
+		  <field name="ddl_entities_providing_service" value="wait-5:QCC" type="mandatory"/>
+		  <field name="tbx_monthly_commit" value="wait-3:100" type="mandatory"/>
+		  <field name="ddl_commit_type" value="wait-3:New" type="mandatory"></field>
+		  <field name="ddl_revenue_type" value="wait-3:Retention" type="mandatory" ></field>
+	 	  <field name="ddl_partner_related" value="wait-5:No" type="mandatory" ></field>
+		  <field name="ddl_centurylink_network_design" value="wait-5:No" type="mandatory"></field>
 		  <field name="tbx_new_comments" value="test" type="mandatory" ></field>
-		  <field name="tbx_nsp_anticipated_nrc" value="wait-2:255"  type="mandatory"></field>
-		  <field name= "tbx_existing_monthly_revenue_ilec" value="wait-2:256" type="mandatory"></field>
-		  <field name= "tbx_existing_monthly_revenue_ixc" value="wait-2:356" type="mandatory"></field>
-		  <field name="ddl_erate_470" value="wait-2:No" type="mandatory"></field>
+		  <field name= "tbx_existing_monthly_revenue_ilec" value="wait-3:256" type="mandatory"></field>
+		  <field name= "tbx_existing_monthly_revenue_ixc" value="wait-3:356" type="mandatory"></field>
+		  <field name="ddl_erate_470" value="wait-5:No" type="mandatory"></field>
+		  <field name="tbx_nsp_anticipated_nrc" value="wait-3:255"  type="mandatory"></field>
+		  <field name="tbx_anticipated_monthly_revenue" value="wait-5:15000" type="mandatory"></field>
 		</container>               
 
         <container name="PassWebHomePage">
-			<field name="tbx_NSP_Number" value="NSP-185320"></field>
+			<field name="tbx_NSP_Number" value="NSP-185324"></field>
 			<field name="ddl_comp_position" value="Other" />
 			<field name="ddl_comp_company" value="Level3" />
 			<field name="ddl_version"   value="2" />
@@ -6443,6 +6443,12 @@
 		    <field name="tbx_Hardware" value="Adtran 3448"/>
 		    <field name="tbx_Maintenance_Type" value="7x24"/>
 		    </container>
+		    <container name="Dedicated IP Port (LEQ)">
+		    <field name="tbx_Affiliated_Company" value="LEQ"/>
+		    <field name="tbx_State_(In_Region)"  value="WY"/>
+		    <field name="tbx_Loop_Speed"              value="Ethernet"/>
+		    <field name="tbx_Service_Speed" value="5 Mbps"/>
+		    </container>
 		    <container name="Optical Wavelength Service (QC)">
               <field name="tbx_Location_A_Rate_Element" value = "Optical Channel"></field>
               <field name="tbx_Location_Z_Rate_Element" value = "Optical Channel"></field>
@@ -6474,6 +6480,31 @@
 		    <field name="tbx_Package_Type" value="Standard"></field>
 		    <field name="tbx_Maintenance_Type" value="24x7"></field>
 		    <field name="tbx_Hardware" value="Adtran"></field>
+		    </container>
+		    <container name="Ethernet Private Line (QCC)">
+		    <field name="tbx_Circuit_Type" value="Ethernet"></field>
+		    <field name="tbx_Access_Speed" value="50M EPL"></field>
+		    <field name="tbx_Service_Speed" value="50 Mbps"></field>
+		    </container>
+		    <container name="iQ+ Private (QCC)">
+		    <field name="tbx_Connection_Type" value="Data Center Access"></field>
+		    <field name="tbx_Port_Type" value="Private"></field>
+		    <field name="tbx_Billing_Type" value="Flat"></field>
+		    <field name="tbx_Loop_Speed" value="DS-1"></field>
+		    <field name="tbx_Service_Speed_/_WAN_Bandwidth" value="1.544 Mbps"></field>
+		    <field name="tbx_Zone" value="1"></field>
+		    <field name="tbx_Service_Level" value="1"></field>
+		    <field name="tbx_Type" value="Private Network Connectivity"></field>
+		    <field name="tbx_Sub-Type" value="1Mbps"></field>
+		    <field name="tbx_Network_Management" value="Standard"></field>
+		    <field name="tbx_Rental_CPE" value="Adtran 3430 - 1 port"></field>
+		    <field name="tbx_Maintenance" value="24x7"></field>
+		    <field name="tbx_Addon_Type" value="EPM"></field>
+		    <field name="tbx_Addon_Sub_Type" value="Hub"></field>
+		    <field name="tbx_Max_Service_Bandwidth" value="1Gb"></field>
+		    <field name="tbx_Min_Microburst_Granularity" value="N/A"></field>
+		    <field name="tbx_Monitoring_Location" value="N/A"></field>
+		    <field name="tbx_Device" value="BV1500"></field>
 		    </container>
             <container name="LD Voice - Domestic (QCC)">
 		    <field name="tbx_Call_Method" value ="Calling Card"></field>
@@ -6510,7 +6541,10 @@
 		    <field name="tbx_SIP_Session_Type" value="Standard"></field>
 		    <field name="tbx_Use_LD_Session_Bucket?" value="Use Bucket"></field>
 		    </container>
-		    
+		    <container name="Optical Wavelength Service (QCC)">
+		    <field name="tbx_Protection_Type" value="Protected"></field>
+		    <field name="tbx_Circuit_Bandwidth" value="100G"></field>
+		    </container>
 		</container>
 		<container name="MassUpdateFieldsPage">
 		   <field name="tbx_Requested_MRR" value="800"/>
@@ -6529,6 +6563,12 @@
 		   <field name="tbx_Requested_Price_Per_Minute" value = "0.04"/>
 		   <field name="tbx_Session_Quantity" value= "40"></field>
 		   <field name="tbx_Quantity" value="40"></field>
+		   <field name="tbx_Street" value = "801 E Iowa Ave"></field>
+		   <field name="tbx_City" value = "Indianola"></field>
+		   <field name="tbx_State" value = "IA"></field>
+		   <field name="tbx_Postal_Code" value = "515961"></field>
+		   <field name="tbx_Type" value="Primary"></field>
+		   <field name="tbx_Loop_Type" value = "Special Access"></field>
 		   </container>
 	    <container name="GridFields">
 			<field name="tbx_Configuration" value="Ring Configuration" />
@@ -6546,6 +6586,14 @@
 		    <field name="tbx_Service_Description" value ="5 Mbps"></field>
 		    </container>
 		    <container name="iQ Standard (QCC)">
+		    <field name="tbx_Street" value = "801 E Iowa Ave"></field>
+		    <field name="tbx_City" value = "Indianola"></field>
+		    <field name="tbx_State" value = "IA"></field>
+		    <field name="tbx_Postal_Code" value = "515961"></field>
+		    <field name="tbx_Type" value="Primary"></field>
+		    <field name="tbx_Loop_Type" value = "Special Access"></field>
+		    </container>
+		    <container name="CCE Data (QCC)">
 		    <field name="tbx_Street" value = "801 E Iowa Ave"></field>
 		    <field name="tbx_City" value = "Indianola"></field>
 		    <field name="tbx_State" value = "IA"></field>
@@ -6587,6 +6635,12 @@
 		    <field name="tbx_Type" value="Primary"></field>
 		    <field name="tbx_Loop_Type" value = "Special Access"></field>
 		    </container>
+		    <container name="iQ+ Private (QCC)">
+		    <field name="tbx_Street" value = "801 E Iowa Ave"></field>
+		    <field name="tbx_City" value = "Indianola"></field>
+		    <field name="tbx_State" value = "IA"></field>
+		    <field name="tbx_Postal_Code" value = "515961"></field>
+		    </container>
 		    <container name="Private Line Domestic (QCC)">
 		    <field name="tbx_Street" value = "801 E Iowa Ave"></field>
 		    <field name="tbx_City" value = "Indianola"></field>
@@ -6602,9 +6656,25 @@
 		    <field name="tbx_State" value = "IA"></field>
 		    <field name="tbx_Postal_Code" value = "515961"></field>
 		    </container>
+		    <container name="Ethernet Private Line (QCC)">
+		    <field name="tbx_Street" value = "801 E Iowa Ave"></field>
+		    <field name="tbx_City" value = "Indianola"></field>
+		    <field name="tbx_State" value = "IA"></field>
+		    <field name="tbx_Postal_Code" value = "515961"></field>
+		    <field name="tbx_Type" value="Primary"></field>
+		    <field name="tbx_Loop_Type" value = "Special Access"></field>
+		    </container>
+		    <container name="Optical Wavelength Service (QCC)">
+		    <field name="tbx_Street" value = "801 E Iowa Ave"></field>
+		    <field name="tbx_City" value = "Indianola"></field>
+		    <field name="tbx_State" value = "IA"></field>
+		    <field name="tbx_Postal_Code" value = "515961"></field>
+		    <field name="tbx_Type" value="Primary"></field>
+		    <field name="tbx_Loop_Type" value = "Special Access"></field>
+		    </container>
 		 </container>
         <container name="SFA">
-            <field name="nsp" value="NSP-185320"/>
+            <field name="nsp" value="NSP-185362"/>
          </container>   
 
 </container>

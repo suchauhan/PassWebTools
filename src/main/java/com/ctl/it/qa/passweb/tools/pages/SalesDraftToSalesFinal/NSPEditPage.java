@@ -95,12 +95,6 @@ public class NSPEditPage extends SfaPage {
 		{
 			currmilli = currmilli + (1000*60*60*24*2);
 			Date date3 = new Date(currmilli);
-			/*month = date3.getMonth()+1;
-			day = date3.getDate();
-			String newseldate = pickdate.toString();
-			String year = newseldate.substring(newseldate.length()-4,newseldate.length());
-			String txtDate = month+"/"+day+"/"+year;
-			String dateC = date3.getMonth()+1+"/"+date3.getDate()+"/"+year;*/
 			return dateformat.format(date3);
 		}
 		
@@ -115,42 +109,6 @@ public class NSPEditPage extends SfaPage {
 		tbx_offer_requested_date.type(selectdate());
 	}
 	
-	public void getDataforNSP()
-	{
-		//getDriver().manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-		ddl_request_type.selectByValue(commonData.getContainer("NSPEditPage").getFieldValue("ddl_request_type"));
-		ddl_request_type.selectByValue(commonData.getContainer("NSPEditPage").getFieldValue("ddl_request_type"));
-		waitABit(2000);
-		ddl_request_contract_term.selectByValue(commonData.getContainer("NSPEditPage").getFieldValue("ddl_request_contract_term"));
-		waitABit(2000);
-		ddl_entities_providing_service.selectByValue(commonData.getContainer("NSPEditPage").getFieldValue("ddl_entities_providing_service"));
-		waitABit(2000);
-		tbx_monthly_commit.type(commonData.getContainer("NSPEditPage").getFieldValue("tbx_monthly_commit"));
-		waitABit(2000);
-		ddl_commit_type.selectByValue(commonData.getContainer("NSPEditPage").getFieldValue("ddl_commit_type"));  	
-		waitABit(2000);
-		ddl_revenue_type.selectByValue(commonData.getContainer("NSPEditPage").getFieldValue("ddl_revenue_type"));
-		waitABit(2000);
-		ddl_partner_related.selectByValue(commonData.getContainer("NSPEditPage").getFieldValue("ddl_partner_related"));
-		waitABit(2000);
-		ddl_centurylink_network_design.selectByValue(commonData.getContainer("NSPEditPage").getFieldValue("ddl_centurylink_network_design"));
-		waitABit(2000);
-		tbx_anticipated_monthly_revenue.type(commonData.getContainer("NSPEditPage").getFieldValue("tbx_anticipated_monthly_revenue"));
-		waitABit(2000);
-		tbx_new_comments.type(commonData.getContainer("NSPEditPage").getFieldValue("tbx_new_comments"));
-		waitABit(2000);
-		tbx_anticipated_monthly_revenue.type(commonData.getContainer("NSPEditPage").getFieldValue("tbx_anticipated_monthly_revenue"));
-		waitABit(2000);
-		tbx_anticipated_monthly_revenue.sendKeys(Keys.TAB);
-		tbx_anticipated_monthly_revenue.sendKeys(Keys.TAB);
-		waitABit(2000);
-		tbx_nsp_anticipated_nrc.type(commonData.getContainer("NSPEditPage").getFieldValue("tbx_nsp_anticipated_nrc"));
-		waitABit(2000);
-		tbx_existing_monthly_revenue_ilec.type(commonData.getContainer("NSPEditPage").getFieldValue("tbx_existing_monthly_revenue_ilec"));
-		waitABit(2000);
-		tbx_existing_monthly_revenue_ixc.type(commonData.getContainer("NSPEditPage").getFieldValue("tbx_existing_monthly_revenue_ixc"));
-		waitABit(2000);
-		ddl_erate_470.selectByValue(commonData.getContainer("NSPEditPage").getFieldValue("ddl_erate_470"));
-	}
+	
 	}
 

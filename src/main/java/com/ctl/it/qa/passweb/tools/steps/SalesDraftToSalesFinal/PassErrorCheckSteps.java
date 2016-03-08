@@ -3,6 +3,8 @@ package com.ctl.it.qa.passweb.tools.steps.SalesDraftToSalesFinal;
 import java.util.ArrayList;
 import java.util.List;
 
+import junit.framework.Assert;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 
@@ -48,6 +50,10 @@ public class PassErrorCheckSteps extends PasswebSteps {
 	{
 		errorPage.btn_refreshErrors.click();
 		waitABit(3000);
+		countErrors();
+		//Assert.assertTrue("No errors are present", errorList.isEmpty());
+		
+		
 	}
 	
 	public void checkErrors()
@@ -55,9 +61,8 @@ public class PassErrorCheckSteps extends PasswebSteps {
 		
 		passHomePage.btn_actions.click();
 		passHomePage.ddl_errorCheck.click();
-		waitABit(1000);
+		waitABit(2000);
 		countErrors();
-		
 	}
 	public int countErrors()
 	{
@@ -97,7 +102,6 @@ public class PassErrorCheckSteps extends PasswebSteps {
 	{
 		checkErrors();
 		getProductAndMsg();
-		refreshErrors();
 		
 	}
 	public void getProductAndMsg()

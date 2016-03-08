@@ -33,7 +33,7 @@ public class PasswebHomeSteps extends PasswebSteps {
 	public void loadNSP()
 	{
 		passWebHomePage.ddl_NSPSearchValue.click();
-		waitABit(25000);
+		waitABit(30000);
 		
 	}
 	
@@ -77,7 +77,7 @@ public class PasswebHomeSteps extends PasswebSteps {
 		passWebHomePage.tbx_product.type(product);
 		passWebHomePage.btn_Submit.click();
 		//passWebHomePage.waitFor("lbl_import");
-		waitABit(50000);
+		waitABit(60000);
 	}
 	
 	@Step
@@ -85,7 +85,7 @@ public class PasswebHomeSteps extends PasswebSteps {
 	{
 		passWebHomePage.btn_actions.click();
 		passWebHomePage.ddl_cloneversion.click();
-		waitABit(30000);
+		waitABit(60000);
 	}
 	
 	@Step
@@ -118,13 +118,14 @@ public class PasswebHomeSteps extends PasswebSteps {
 		//addProductPage.shouldExist(addProductPage);
 		System.out.println("enter add product");
 		passWebHomePage.btn_actions.click();
+		waitABit(4000);
 		//addProductPage.btn_action.click();
 		addProductPage.ddl_actionsList.click();
-		waitABit(1000);
+		waitABit(3000);
 		addProductPage.ddl_entity_list.click();
-	    waitABit(5000);
+	    waitABit(40000);
 		passWebHomePage.getList(Entity);
-		waitABit(5000);
+		waitABit(4000);
 		addProductPage.ddl_product_list.click();
 		waitABit(2000);
 		//addProductPage.ddl_product_list_val.click();
@@ -132,7 +133,7 @@ public class PasswebHomeSteps extends PasswebSteps {
 		addProductPage.tbx_rowcount.type("1");
 		addProductPage.btn_submitProduct.click();
 		System.out.println("Product Added Successfully");
-		waitABit(40000);
+		waitABit(70000);
 	}
 	
 	

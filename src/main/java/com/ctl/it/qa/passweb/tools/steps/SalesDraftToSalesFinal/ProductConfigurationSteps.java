@@ -60,45 +60,21 @@ public class ProductConfigurationSteps extends PasswebSteps{
 	{
 		ProdVal = product;
 	}
+
+
 	
-	@Step
-	public void getEntityAndProducts(DataTable table)
+	public void fetchEntityProducts(String args1, String args2)
 	{
 		
-		List<List<String>> entity = table.raw();
-		for(int i = 0;i<entity.size();i++)
-		{
-
-			setEntity(entity.get(i).get(0));
-			setProduct(entity.get(i).get(1));
-			passwebHomeSteps.addProduct(getEntity(), getProduct());
-			dealSummarySteps.selectandConfigureAddedProduct(getProduct());
-			dealSummarySteps.selectAddedProduct(getProduct());
-			compareUpdateKeyMassUpdate(getProduct());
-		}
-	}
-
-	public List<List<String>> getEntityAndProducts1(DataTable table)
-	{
-		
-		List<List<String>> featureFileValues = table.raw();
-		return featureFileValues;
-	}
-	
-	public void fetchEntityProducts(DataTable table)
-	{
-		List<List<String>> datavalues = getEntityAndProducts1(table);
 		this.entityValues = new ArrayList<String>();
 		this.productValues= new ArrayList<String>();
-		for(int i = 0;i<datavalues.size();i++)
-		{
-			entityValues.add(datavalues.get(i).get(0));
-			productValues.add(datavalues.get(i).get(1));
-			System.out.println("Entity Count " +entityValues.size() + " " + entityValues);
-			System.out.println("Product Count " +productValues.size() + " " + productValues);
-		}
+		entityValues.add(args1);
+		productValues.add(args2);
+		System.out.println("Entity Count " +entityValues.size() + " " + entityValues);
+		System.out.println("Product Count " +productValues.size() + " " + productValues);
+
 	}
-	@Step
+	/*@Step
 	public void addProductandapplyConfigurations(DataTable table)
 	{
 		fetchEntityProducts(table);
@@ -108,12 +84,12 @@ public class ProductConfigurationSteps extends PasswebSteps{
 			dealSummarySteps.selectandConfigureAddedProduct(productValues.get(i));
 			
 		}
-	}
+	}*/
 	
 	@Step
-	public void addProductmanually(DataTable table)
+	public void addProductmanually(String entity, String product)
 	{
-		fetchEntityProducts(table);
+		fetchEntityProducts(entity, product);
 		for(int i = 0; i<productValues.size();i++)
 		{
 			passwebHomeSteps.addProduct(entityValues.get(i), productValues.get(i));
@@ -150,7 +126,7 @@ public class ProductConfigurationSteps extends PasswebSteps{
 	
 	public void compareUpdateKeyMassUpdate(String productName)
 	{
-		dealSummaryPage.cbx_selectAll.click();
+		
 		List<WebElement> updateButtons = getDriver().findElements(By.xpath("//label[text() = '"+productName+"']/following-sibling::div[contains(@id, 'componentgrid')]//span[text() = 'Update Key Fields']"));
 		List<WebElement> massButtons = getDriver().findElements(By.xpath("//label[text() = '"+productName+"']/following-sibling::div[contains(@id, 'componentgrid')]//span[text() = 'Mass Update']"));
 		System.out.println("Update Buttons " +updateButtons.size());
@@ -174,7 +150,6 @@ public class ProductConfigurationSteps extends PasswebSteps{
 			
 			getDriver().findElement(By.xpath("//div[contains(@id,'updateKeyFieldsWindow')]//span[text() = 'Cancel']")).click();
 			waitABit(2000);
-			
 			
 			massButtons.get(h).click();
 			massUpdateFieldsPage.ddl_target.click();
